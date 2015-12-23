@@ -10,7 +10,6 @@ class Top extends CI_Controller {
 		$this->load->helper('url');
 	}
 
-	/* トップページ */
 	public function index($animeTitle = null){
 
 		if($_POST)$this->search($_POST);
@@ -19,10 +18,6 @@ class Top extends CI_Controller {
 		for($i=0;$i<count($data['titles']);$i++){
 			$data['url'][$i] = $this->Picture_Model->getAllUrlsFromTitleId($data['titles'][$i]->id);
 		}
-		$this->loadView("top",$data);
-	}
-
-	public function loadView($page,$data){
 		$this->load->view('header',$data);
 		$this->load->view($page,$data);
 		$this->load->view('footer');

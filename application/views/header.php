@@ -68,7 +68,7 @@ $('a').on('click', function() {
 </head>                                                                                                                                                        
 <body>                                                                                                                                                         
 
-<nav class="navbar navbar-fixed-top">
+<nav class="navbar">
         <div class="container">
                 <div class="navbar-header">
                         <a class="navbar-brand" href="<?php echo base_url();?>">TOKYO TRACK</a>
@@ -97,7 +97,7 @@ $('a').on('click', function() {
                 </div>
         </div>
 </nav>
-<div class="container" style="padding:80px 0 0 0">
+<div class="container" style="padding:0 0 0 0">
    <!-- content -->
     <div class="row">
         <!-- left -->

@@ -18,8 +18,8 @@ class Anime extends CI_Controller {
 		$data['titles'] = $this->Title_Model->getAllTitles();
 		$data['titleName'] = $titleName;
 		$data['description'] = $this->Title_Model->getDescriptionFromId($titleId);
-		$data['movie'] = $this->Movie_Model->getVideoIdFromTitleId($titleId);
-		$data['url'] = $this->Picture_Model->getUrlsFromTitleId($titleId);
+		$data['movies'] = $this->Movie_Model->getVideoIdFromTitleId($titleId);
+		$data['imageUrls'] = $this->Picture_Model->getUrlsFromTitleId($titleId);
 		$data['tag'] = str_replace(" ","",strtolower($titleName));
 		$data['animeTitle'] = $titleName;
 		if(empty($contents)){

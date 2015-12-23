@@ -9,12 +9,9 @@
 </ol>
 <h1><?php echo $animeTitle?></h1>
 <ol class="contents_menu breadcrumb" style="margin-top:20px"><h4>Illustration</h4></ol>
-<img height="200" src="<?php echo $url[0][0]->url?>">
-<img height="200" src="<?php echo $url[0][2]->url?>">
-<img height="200" src="<?php echo $url[0][3]->url?>">
-<img height="200" src="<?php echo $url[0][4]->url?>">
-<img height="200" src="<?php echo $url[0][6]->url?>">
-<img height="200" src="<?php echo $url[0][7]->url?>">
+<?php for($i=0;$i<count($imageUrls);$i++){?>
+<img height="200" src="<?php echo $imageUrls[$i]->url?>">
+<?php }?>
 <br>
 <br>
 <br>

@@ -9,10 +9,9 @@
 </ol>
 <h1><?php echo $animeTitle?></h1>
 <ol class="contents_menu breadcrumb" style="margin-top:20px"><h4>Movie</h4></ol>
-<iframe width="48%" height="315" src="https://www.youtube.com/embed/XMXgHfHxKVM" frameborder="0" allowfullscreen></iframe>
-<iframe width="48%" height="315" src="https://www.youtube.com/embed/XMXgHfHxKVM" frameborder="0" allowfullscreen></iframe>
-<iframe width="48%" height="315" src="https://www.youtube.com/embed/XMXgHfHxKVM" frameborder="0" allowfullscreen></iframe>
-<iframe width="48%" height="315" src="https://www.youtube.com/embed/XMXgHfHxKVM" frameborder="0" allowfullscreen></iframe>
+<?php for($i=0;$i<count($movies);$i++){?>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $movies[$i]?>" frameborder="0" allowfullscreen></iframe>
+<?php }?>
 <br>
 <br>
 <br>
