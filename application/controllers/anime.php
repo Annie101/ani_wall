@@ -1,29 +1,27 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Anime extends CI_Controller {
-	var $artists;
+	var $titles;
 	var $data;
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('Artist_Model');
-		$this->load->model('Contents_Model');
+		$this->load->model('Title_Model');
+		$this->load->model('Picture_Model');
 		$this->load->model('Request_Model');
 		$this->load->helper('url');
-		$this->_artistId = 1;
 	}
 
-	public function index($animeTitle = null){
-		if(!empty($animeTitle)){
-			$this->anime($animeTitle);
+	public function index($title = null){
+		if(!empty($title)){
+			$this->anime($title);
 			return;
 		}
-
 		if($_POST)$this->search($_POST);
-		$this->_data['artists'] = $this->Artist_Model->getAllArtists();
+		$this->_data['titles'] = $this->Title_Model->getAllTitles();
 
-		for($i=0;$i<count($this->_data['artists']);$i++){
-			$this->_data['url'][$i] = $this->Contents_Model->getAllUrlsFromArtistId($this->_data['artists'][$i]->id);
+		for($i=0;$i<count($this->_data['titles']);$i++){
+			$this->_data['url'][$i] = $this->Picute_Model->getAllUrlsFromTitleId($this->_data['titles'][$i]->id);
 		}
 		$this->loadView();
 	}
@@ -37,8 +35,12 @@ class Anime extends CI_Controller {
 		$this->Request_Model->insertRequestAnime($anime);   
 	}
 
-	public function anime($animeTitle){
-		$data['animeTitle'] = $animeTitle;
-		$this->load->view('anime',$data);
+	public function anime($title){
+		var_dump($titleId);
+		$titleId = $this->Title_Model->getIdFromName($title);
+		var_dump($titleId);
+		$data['animeTitle'] = $title;
+		//$this->load->view('anime',$data);
+		$this->load->view('movie',$data);
 	}
 }

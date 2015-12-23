@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JAPAN TRACK</title>
+<title>TOKYO TRACK</title>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://www.delshack.co/ani_wall/public/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="<?php echo base_url();?>public/bootstrap/css/bootstrap.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -71,7 +71,7 @@ $('a').on('click', function() {
 <nav class="navbar navbar-fixed-top">
         <div class="container">
                 <div class="navbar-header">
-                        <a class="navbar-brand" href="<?php echo base_url();?>top">JAPAN TRACK</a>
+                        <a class="navbar-brand" href="<?php echo base_url()."top";?>">TOKYO TRACK</a>
 
                 </div>
                 <div class="collapse navbar-collapse" id="navbarEexample1">
@@ -81,7 +81,7 @@ $('a').on('click', function() {
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CATEGORY <span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                                 <li><a href="<?php echo base_url();?>top">ALL</a></li>
-                                                                                                <li><a href="<?php echo base_url();?>top/anime/<?php echo $artists[0]->name;?>"><?php echo $artists[0]->name?></a></li>
+                                                                                                <li><a href="<?php echo base_url();?>top/anime/<?php echo $titles[0]->name;?>"><?php echo $titles[0]->name?></a></li>
                                                                                         </ul>
                                 </li>
                                 <li><a href="http://www.delshack.co/ani_wall/about">ABOUT US</a></li>
@@ -107,8 +107,8 @@ $('a').on('click', function() {
                     Anime List
                 </div>
                 <ul class="nav nav-pills nav-stacked">
-			<?php for($i=0;$i<count($artists);$i++){?>
-                    <li><a href="<?php echo base_url();?>top/anime/<?php echo $artists[$i]->name;?>"><?php echo $artists[$i]->name;?></a></li>
+			<?php for($i=0;$i<count($titles);$i++){?>
+                    <li><a href="<?php echo base_url();?>top/anime/<?php echo $titles[$i]->name;?>"><?php echo $titles[$i]->name;?></a></li>
 			<?php } ?>
                 </ul> 
             </div>

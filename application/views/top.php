@@ -1,16 +1,22 @@
-<?php for($i=0;$i<count($artists);$i++){ ?>
-<div class="panel panel-default">
-        <div class="panel-heading">
-                <?php echo $artists[$i]->name?>
-        </div>
-        <div class="panel-body">
-        <div class="media-left">
-                <a href="https://www.instagram.com/<?php //echo $username[$i]?>/">
-		<img height="150px" src="<?php echo $url[$i][0]->url;?>"></a>
-		<img height="150px" src="<?php echo $url[$i][1]->url;?>"></a>
-		<img height="150px" src="<?php echo $url[$i][2]->url;?>"></a>
-		<img height="150px" src="<?php echo $url[$i][3]->url;?>"></a>
-        </div>
-        </div>
-</div>
-<?php } ?>
+<ul data-role="listview">                                                                                                                                      
+<?php for($i=0;$i<count($titles);$i++){ ?>                                                                                                               
+<li>
+<a data-ajax="false" href="<?php echo base_url()."index.php/top/index/".$titles[$i]->id."/0";?>">
+<h1><?php echo $titles[$i]->name; ?></h1>
+<img height="100" src="<?php echo $url[$i][0]->url?>">
+<img height="100" src="<?php echo $url[$i][2]->url?>">
+<img height="100" src="<?php echo $url[$i][3]->url?>">
+<img height="100" src="<?php echo $url[$i][4]->url?>">
+<!--
+-->
+</a>
+</li>                                                                                                                                                      
+<?php } ?>                                                                                                                                                     
+<li>
+<h1>REQUEST</h1>
+    <form method="POST" action="<?php echo base_url('top');?>" data-ajax="false">
+        <input name="anime" type="text" />
+        <input type="submit" value="Request Other Anime" />
+    </form>
+</li>                                                                                                                                                               
+</ul>               

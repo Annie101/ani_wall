@@ -3,8 +3,8 @@
 class Top extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('Artist_Model');
-		$this->load->model('Contents_Model');
+		$this->load->model('Title_Model');
+		$this->load->model('Picture_Model');
 		$this->load->model('Request_Model');
 		$this->load->helper('url');
 	}
@@ -13,21 +13,33 @@ class Top extends CI_Controller {
 	public function index($animeTitle = null){
 
 		if($_POST)$this->search($_POST);
-		$data['artists'] = $this->Artist_Model->getAllArtists();
+		$data['titles'] = $this->Title_Model->getAllTitles();
 
-		for($i=0;$i<count($data['artists']);$i++){
-			$data['url'][$i] = $this->Contents_Model->getAllUrlsFromArtistId($data['artists'][$i]->id);
+		for($i=0;$i<count($data['titles']);$i++){
+			$data['url'][$i] = $this->Picture_Model->getAllUrlsFromTitleId($data['titles'][$i]->id);
 		}
 		$this->loadView("top",$data);
 	}
 
 	/* アニメページ */
-	public function anime($animeTitle = null){
+	public function anime($title = null,$contents=null){
+		$titleId = $this->Title_Model->getIdFromName(str_replace("%20", " ", $title));
 		if($_POST)$this->search($_POST);
-		$data['artists'] = $this->Artist_Model->getAllArtists();
-		$data['tag'] = str_replace("%20", "", strtolower($animeTitle));
-		$data['animeTitle'] = str_replace("%20", " ", $animeTitle);
-		$this->loadView("anime",$data);
+		$data['titles'] = $this->Title_Model->getAllTitles();
+		for($i=0;$i<count($data['titles']);$i++){
+			$data['url'][$i] = $this->Picture_Model->getAllUrlsFromTitleId($data['titles'][$i]->id);
+		}
+		$data['tag'] = str_replace("%20", "", strtolower($title));
+		$data['animeTitle'] = str_replace("%20", " ", $title);
+		if(empty($contents)){
+			$this->loadView("anime",$data);
+		}else if($contents == "movie"){
+			$this->loadView("movie",$data);
+		}else if($contents == "illustration"){
+			$this->loadView("illustration",$data);
+		}else if($contents == "instagram"){
+			$this->loadView("instagram",$data);
+		}
 	}
 
 	public function loadView($page,$data){
