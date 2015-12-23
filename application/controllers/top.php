@@ -5,6 +5,7 @@ class Top extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Title_Model');
 		$this->load->model('Picture_Model');
+		$this->load->model('Movie_Model');
 		$this->load->model('Request_Model');
 		$this->load->helper('url');
 	}
@@ -24,13 +25,16 @@ class Top extends CI_Controller {
 	/* アニメページ */
 	public function anime($title = null,$contents=null){
 		$titleId = $this->Title_Model->getIdFromName(str_replace("%20", " ", $title));
-		if($_POST)$this->search($_POST);
+		$titleName = $this->Title_Model->getNameFromId($titleId);
+		//if($_POST)$this->search($_POST);
+
 		$data['titles'] = $this->Title_Model->getAllTitles();
-		for($i=0;$i<count($data['titles']);$i++){
-			$data['url'][$i] = $this->Picture_Model->getAllUrlsFromTitleId($data['titles'][$i]->id);
-		}
-		$data['tag'] = str_replace("%20", "", strtolower($title));
-		$data['animeTitle'] = str_replace("%20", " ", $title);
+		$data['titleName'] = $titleName;
+		$data['description'] = $this->Title_Model->getDescriptionFromId($titleId);
+		$data['movie'] = $this->Movie_Model->getVideoIdFromTitleId($titleId);
+		$data['url'] = $this->Picture_Model->getUrlsFromTitleId($titleId);
+		$data['tag'] = str_replace(" ","",strtolower($titleName));
+		$data['animeTitle'] = $titleName;
 		if(empty($contents)){
 			$this->loadView("anime",$data);
 		}else if($contents == "movie"){

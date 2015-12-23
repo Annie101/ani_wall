@@ -16,12 +16,20 @@ class Title_Model extends CI_Model {
                 return $result[0]['id'];
         }
 
-        public function getTitleName($id){
+        public function getNameFromId($id){
                 $sql = "SELECT name FROM title ";
                 $sql .= "WHERE id = {$id}";
                 $query = $this->db->query($sql);
                 $result = $query->result_array();
                 return $result[0]['name'];
+        }
+
+        public function getDescriptionFromId($id){
+                $sql = "SELECT description FROM title ";
+                $sql .= "WHERE id = {$id}";
+                $query = $this->db->query($sql);
+                $result = $query->result_array();
+                return $result[0]['description'];
         }
 
         public function getAllTitles(){

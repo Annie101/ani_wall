@@ -34,6 +34,15 @@ class Picture_Model extends CI_Model {
                 return $result;
         }
 
+        public function getUrlsFromTitleId($titleId){
+                $sql = "SELECT url FROM picture ";
+                $sql .= "WHERE title_id = {$titleId} ";
+                $sql .= "AND delete_flag = 0";
+                $query = $this->db->query($sql);
+                $result = $query->result();
+                return $result;
+        }
+
 	public function getContentsNumFromTitleId($artistId){
                 $sql = "SELECT count(*) FROM picture ";
                 $sql .= "WHERE title_id = {$artistId}";
