@@ -1,5 +1,5 @@
 <?php for($i=0;$i<count($artists);$i++){ ?>
-<div class="panel panel-info">
+<div class="panel panel-default">
         <div class="panel-heading">
                 <?php echo $artists[$i]->name?>
         </div>
