@@ -2,8 +2,8 @@
 <?php if(empty($animeTitle)){?>
 	<li class="active"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>TOP</li>
 <?php }else{ ?>
-	<li><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><a href="<?php echo base_url();?>/top">TOP</a></li>
-	<li><a href="<?php echo base_url();?>top/anime/<?php echo $animeTitle;?>"><?php echo $animeTitle;?></a></li>
+	<li><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><a href="<?php echo base_url();?>">TOP</a></li>
+	<li><a href="<?php echo base_url();?>anime/<?php echo $animeTitle;?>"><?php echo $animeTitle;?></a></li>
 	<li class="active">Illustration</li>
 <?php } ?>
 </ol>

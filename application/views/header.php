@@ -71,7 +71,7 @@ $('a').on('click', function() {
 <nav class="navbar navbar-fixed-top">
         <div class="container">
                 <div class="navbar-header">
-                        <a class="navbar-brand" href="<?php echo base_url()."top";?>">TOKYO TRACK</a>
+                        <a class="navbar-brand" href="<?php echo base_url();?>">TOKYO TRACK</a>
 
                 </div>
                 <div class="collapse navbar-collapse" id="navbarEexample1">
@@ -108,7 +108,7 @@ $('a').on('click', function() {
                 </div>
                 <ul class="nav nav-pills nav-stacked">
 			<?php for($i=0;$i<count($titles);$i++){?>
-                    <li><a href="<?php echo base_url();?>top/anime/<?php echo $titles[$i]->name;?>"><?php echo $titles[$i]->name;?></a></li>
+                    <li><a href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>"><?php echo $titles[$i]->name;?></a></li>
 			<?php } ?>
                 </ul> 
             </div>
