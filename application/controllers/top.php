@@ -1,9 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Top extends CI_Controller {
-	var $artistId;
-	var $data;
-
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Artist_Model');
@@ -12,52 +9,36 @@ class Top extends CI_Controller {
 		$this->load->helper('url');
 	}
 
-	public function test(){
-		echo "test";
-	}
+	/* トップページ */
+	public function index($animeTitle = null){
 
-	public function index($artistId,$page){
-		//if($artistId == 8)$artistId = 13;
-		//if($artistId == 9)$artistId = 14;
-		if($artistId == 13)$artistId = 8;
+		if($_POST)$this->search($_POST);
+		$data['artists'] = $this->Artist_Model->getAllArtists();
 
-		$this->_data['artistName'] = $this->Artist_Model->getArtistName($artistId);
-		$this->setPages($artistId,$page);
-
-		$url = $this->Contents_Model->getAllUrlsFromArtistId($artistId);
-		shuffle($url);
-		$this->_data['url'] = $url[$page]->url;
-		$this->_data['artistId'] = $artistId;
-
-		$this->getMenu($artistId);
-		$this->loadView();
-	}
-
-	public function setPages($artistId,$page){
-		$endPageNumber = $this->Contents_Model->getContentsNumFromArtistId($artistId) -1 ;
-		if($page >= $endPageNumber){
-			$this->_data['PrePage'] = $page - 1;
-			$this->_data['NextPage'] = 0;
-		}else if($page == 0){
-			$this->_data['PrePage'] = $endPageNumber;
-			$this->_data['NextPage'] = $page + 1;
-		}else{
-			$this->_data['PrePage'] = $page - 1;
-			$this->_data['NextPage'] = $page + 1;
+		for($i=0;$i<count($data['artists']);$i++){
+			$data['url'][$i] = $this->Contents_Model->getAllUrlsFromArtistId($data['artists'][$i]->id);
 		}
+		$this->loadView("top",$data);
 	}
 
-	public function loadView(){
-		$this->load->view('top',$this->_data);
+	/* アニメページ */
+	public function anime($animeTitle = null){
+		if($_POST)$this->search($_POST);
+		$data['artists'] = $this->Artist_Model->getAllArtists();
+		$data['tag'] = str_replace("%20", "", strtolower($animeTitle));
+		$data['animeTitle'] = str_replace("%20", " ", $animeTitle);
+		$this->loadView("anime",$data);
 	}
 
-	public function getMenu($artistId){
-		$this->_data['artists'] = $this->Artist_Model->getOtherArtists($artistId);
+	public function loadView($page,$data){
+		$this->load->view('header',$data);
+		$this->load->view($page,$data);
+		$this->load->view('footer');
 	}
 
-	public function getImage($artistId){
-		$imageUrl = $this->Contents_Model->getRandomUrlFromArtistId($artistId);
-		$arr = array('url' => $imageUrl);
-		echo json_encode($arr);
+	public function search(){
+	        $anime = htmlspecialchars($_POST['anime']);
+		$this->Request_Model->insertRequestAnime($anime);   
 	}
+
 }
