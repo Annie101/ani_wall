@@ -12,6 +12,7 @@ class Movie_Model extends CI_Model {
                 $sql .= "WHERE title_id = {$titleId}";
                 $query = $this->db->query($sql);
                 $result = $query->result_array();
-          	return $result[0]['video_id'];
+		if(empty($result))return null; 
+         	return $result[0]['video_id'];
         }
 }

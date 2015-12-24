@@ -19,7 +19,7 @@ class Top extends CI_Controller {
 			$data['url'][$i] = $this->Picture_Model->getAllUrlsFromTitleId($data['titles'][$i]->id);
 		}
 		$this->load->view('header',$data);
-		$this->load->view($page,$data);
+		$this->load->view('top',$data);
 		$this->load->view('footer');
 	}
 

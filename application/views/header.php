@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<?php echo base_url();?>public/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link rel="alternate" href="<?php echo base_url();?>" hreflang="en-us">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
