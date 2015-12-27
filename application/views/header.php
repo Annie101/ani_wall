@@ -9,6 +9,9 @@
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>public/materialize/css/materialize.min.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>public/style.css"  media="screen,projection"/>
+<script src="<?php echo base_url();?>public/materialize/js/materialize.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,6 +24,15 @@
 $('a').on('click', function() {                                                                                                                                
         ga('send', 'event', 'menu', 'click');                                                                                                                  
 });                                                                                                                                                            
+
+(function($){
+ $(function(){
+	 $('.button-collapse').sideNav();
+	 $('.parallax').parallax();
+	 $(".dropdown-button").dropdown();
+	 $('.slider').slider({full_width: true});
+	 }); 
+ })(jQuery);
 </script>                                                                                                                                                      
 <?php }else{ ?>
 <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>../public/materialize/css/materialize.min.css"  media="screen,projection"/>
