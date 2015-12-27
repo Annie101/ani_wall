@@ -8,6 +8,15 @@
 </nav>
 <center>
 <img width="80%" src="<?php echo $imageUrls[$currentNumber]->url?>">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- TokyoTrack_banner -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:100px"
+     data-ad-client="ca-pub-8518445411560478"
+     data-ad-slot="7643976349"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </center>
 <br>
 <br>
@@ -16,6 +25,15 @@
   <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="button">Next</a>
 </div>
 <br>
-<br>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- TokyoTrack_footer -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8518445411560478"
+     data-ad-slot="9120709545"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
