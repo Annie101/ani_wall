@@ -8,6 +8,7 @@
 <link rel="alternate" href="<?php echo base_url();?>" hreflang="en-us">
 <link rel="stylesheet" href="<?php echo base_url();?>public/foundation-6/css/foundation.min.css">
 <script src="<?php echo base_url();?>public/foundation-6/js/vendor/jquery.min.js"></script>
+<?php if(base_url()=="http://tokyotrack.co/"){ ?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -23,6 +24,7 @@ $('a').on('click', function() {
         ga('send', 'event', 'menu', 'click');                                                                                                                  
 });                                                                                                                                                            
 </script>                                                                                                                                                      
+<?php } ?>
 <style type="text/css">
 /*
 .ninja_image {

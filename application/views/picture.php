@@ -18,8 +18,6 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </center>
-<br>
-<br>
 <div class="expanded button-group">
   <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="button">Previous</a>
   <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="button">Next</a>
