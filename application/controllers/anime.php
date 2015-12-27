@@ -22,10 +22,14 @@ class Anime extends CI_Controller {
 		$data['imageUrls'] = $this->Picture_Model->getUrlsFromTitleId($titleId);
 		$data['tag'] = str_replace(" ","",strtolower($titleName));
 		$data['animeTitle'] = $titleName;
+		$data['headerTitle'] = "Tokyo Track｜".$titleName;
+		//アニメページ
 		if(empty($contents)){
 			$this->loadView("anime",$data);
+		//アニメ > 動画ページ
 		}else if($contents == "movie"){
 			$this->loadView("movie",$data);
+		//アニメ > 画像ページ
 		}else if($contents == "illustration"){
 			if($currentNumber === null){
 				$this->loadView("illustration",$data);
@@ -40,6 +44,7 @@ class Anime extends CI_Controller {
 				}
 				$this->loadView("picture",$data);
 			}
+		//アニメ > instagramページ
 		}else if($contents == "instagram"){
 			$this->loadView("instagram",$data);
 		}

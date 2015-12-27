@@ -18,6 +18,7 @@ class Top extends CI_Controller {
 		for($i=0;$i<count($data['titles']);$i++){
 			$data['url'][$i] = $this->Picture_Model->getAllUrlsFromTitleId($data['titles'][$i]->id);
 		}
+		$data['headerTitle'] = "Tokyo Track";
 		$this->load->view('header',$data);
 		$this->load->view('top',$data);
 		$this->load->view('footer');

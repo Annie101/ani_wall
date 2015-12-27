@@ -8,6 +8,8 @@
 </nav>
 <center>
 <img width="80%" src="<?php echo $imageUrls[$currentNumber]->url?>">
+<br>
+<?php if(base_url()=="http://tokyotrack.co/"){ ?>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- TokyoTrack_banner -->
 <ins class="adsbygoogle"
@@ -17,12 +19,13 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</center>
+<?php } ?>
 <div class="expanded button-group">
   <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="button">Previous</a>
   <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="button">Next</a>
 </div>
 <br>
+<?php if(base_url()=="http://tokyotrack.co/"){ ?>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- TokyoTrack_footer -->
 <ins class="adsbygoogle"
@@ -33,5 +36,7 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+<?php } ?>
+</center>
 </div>
 

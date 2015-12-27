@@ -35,7 +35,7 @@ class Picture_Model extends CI_Model {
         }
 
         public function getUrlsFromTitleId($titleId){
-                $sql = "SELECT url FROM picture ";
+                $sql = "SELECT id,url FROM picture ";
                 $sql .= "WHERE title_id = {$titleId} ";
                 $sql .= "AND delete_flag = 0";
                 $query = $this->db->query($sql);

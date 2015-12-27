@@ -10,13 +10,11 @@
 <h1><?php echo $titleName?></h1>
 <p><?php echo $description?></p>
 
-<!--
 <?php if(!empty($movies)){ ?>
 <ol class="contents_menu breadcrumb" style="margin-top:20px"><h4>Movie</h4></ol>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $movies?>" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/<?php echo $movies?>" frameborder="0" allowfullscreen></iframe>
 <br><a href="<?php echo base_url()."anime/".$titleName."/movie"?>">See more</a>
 <?php } ?>
--->
 <?php if(!empty($imageUrls)){ ?>
 <ol class="contents_menu breadcrumb" style="margin-top:20px"><h4>Illustration</h4></ol>
 <?php for($i=0;$i<5;$i++){?>
