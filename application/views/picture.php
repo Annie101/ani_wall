@@ -1,13 +1,15 @@
-<nav aria-label="You are here:" role="navigation">
-  <ul class="breadcrumbs">
-    <li><a href="<?php echo base_url();?>">TOP</a></li>
-    <li class="tt_currect">
-      <span class="show-for-sr">Current: </span> <?php echo $titleName;?> 
-   </li>
-  </ul>
-</nav>
+<div class="tt_bread_div col s12 <?php echo $color2?>">
+<span class="tt_bread">
+<a class="tt_bread" href="<?php echo base_url();?>">TOP</a>
+ ＞ 
+<a class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>"><?php echo $titleName;?></a>
+ ＞ 
+<a class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>/illustration">Illustration</a>
+</span>
+</div>
+
 <center>
-<img width="80%" src="<?php echo $imageUrls[$currentNumber]->url?>">
+<img width="100%" src="<?php echo $imageUrls[$currentNumber]->url?>">
 <br>
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -20,9 +22,9 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <?php } ?>
-<div class="expanded button-group">
-  <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="button">Previous</a>
-  <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="button">Next</a>
+<div class="col s12">
+  <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Previous</a>
+  <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Next</a>
 </div>
 <br>
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>

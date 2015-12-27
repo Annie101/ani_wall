@@ -1,0 +1,24 @@
+.tt_bread_div{
+	padding-left:4px;
+	padding-top:8px;
+	padding-bottom:8px
+}
+.tt_bread{
+	color:#FFFFFF;
+}
+
+.tabs .tab a{
+	color:#ff9800;
+}
+
+.tabs .tab .active {
+	color:#ffb74d;
+}
+
+.tabs .tab a:hover {
+	color:#ffb74d;
+}
+
+.tabs .indicator{
+	background-color:#ffb74d;
+}

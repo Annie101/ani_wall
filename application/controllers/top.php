@@ -11,6 +11,9 @@ class Top extends CI_Controller {
 	}
 
 	public function index($animeTitle = null){
+		$data['color1']= "light-blue darken-2";
+		$data['color2']= "light-blue lighten-2";
+		$data['color3']= "light-blue";
 
 		if($_POST)$this->search($_POST);
 		$data['titles'] = $this->Title_Model->getAllTitles();
