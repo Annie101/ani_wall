@@ -7,8 +7,6 @@
 <img height="100" src="<?php echo $url[$i][2]->url?>">
 <img height="100" src="<?php echo $url[$i][3]->url?>">
 <img height="100" src="<?php echo $url[$i][4]->url?>">
-<!--
--->
 </a>
 </li>                                                                                                                                                      
 <?php } ?>                                                                                                                                                     

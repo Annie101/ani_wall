@@ -10,7 +10,7 @@ class Anime extends CI_Controller {
 		$this->load->helper('url');
 	}
 
-	public function index($title = null,$contents=null){
+	public function index($title = null,$contents=null,$currentNumber = null){
 		$titleId = $this->Title_Model->getIdFromName(str_replace("%20", " ", $title));
 		$titleName = $this->Title_Model->getNameFromId($titleId);
 		//if($_POST)$this->search($_POST);
@@ -27,7 +27,19 @@ class Anime extends CI_Controller {
 		}else if($contents == "movie"){
 			$this->loadView("movie",$data);
 		}else if($contents == "illustration"){
-			$this->loadView("illustration",$data);
+			if($currentNumber === null){
+				$this->loadView("illustration",$data);
+			}else{
+				$data['currentNumber'] = $currentNumber;
+				$data['previousNumber'] = $currentNumber -1;
+				$data['nextNumber'] = $currentNumber +1;
+				if($currentNumber == 0){	
+					$data['previousNumber'] = count($data['imageUrls']) -1;
+				}else if($currentNumber >= count($data['imageUrls'])-1){
+					$data['nextNumber'] = 0;
+				}
+				$this->loadView("picture",$data);
+			}
 		}else if($contents == "instagram"){
 			$this->loadView("instagram",$data);
 		}
@@ -36,6 +48,7 @@ class Anime extends CI_Controller {
 	public function loadView($page,$data){
 		$this->load->view('header',$data);
 		$this->load->view($page,$data);
+		//$this->load->view('test',$data);
 		$this->load->view('footer');
 	}
 }

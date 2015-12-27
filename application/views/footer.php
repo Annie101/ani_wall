@@ -1,7 +1,5 @@
 </div>
-</div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="<?php echo base_url();?>public/bootstrap/js/bootstrap.min.js"></script>
-</body>                                                                                                                                                        
+<script src="<?php echo base_url();?>public/foundation-6/js/foundation.min.js"></script>
+<script src="<?php echo base_url();?>public/clipboard.js"></script>
+</body>
 </html> 
