@@ -47,6 +47,7 @@ ga('send', 'event', 'menu', 'click');                                           
 	<?php for($i=0;$i<count($titles);$i++){?>
             <li><a href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>"><?php echo $titles[$i]->name;?></a></li>
 	<?php } ?>
+	<li><a href="https://docs.google.com/forms/d/16mXlg1xnj5w_o099qRRlZpfkC9cVLBYItRaDIT4nke4/viewform?uiv=1&edit_requested=true"><span class="tt_request">REQUEST</span></a></li>
         </ul>
         <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
         </div>
