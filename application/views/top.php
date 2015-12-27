@@ -1,12 +1,20 @@
-<ul data-role="listview">                                                                                                                                      
-<?php for($i=0;$i<count($titles);$i++){ ?>                                                                                                               
-<li>
-<a data-ajax="false" href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>/illustration/0">
-<h1><?php echo $titles[$i]->name; ?></h1>
-<img width="100%" src="<?php echo $url[$i][0]->url?>">
+<ul data-role="listview">
+<div class="row">
+<?php for($i=0;$i<count($titles);$i++){ ?>
+<a data-ajax="false" href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>">
+	<div class="col s12 m7">
+		<div class="card">
+			<div class="card-image">
+				<img src="<?php echo $url[$i][0]->url?>">
+			</div>
+			<div class="tt_card_div card-action">
+				<?php echo $titles[$i]->name; ?>
+			</div>
+		</div>
+	</div>
 </a>
-</li>                                                                                                                                                      
-<?php } ?>                                                                                                                                                     
+<?php } ?>
+</div>
 <!--
 <li>
 <h1>REQUEST</h1>
