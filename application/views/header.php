@@ -42,7 +42,7 @@ ga('send', 'event', 'menu', 'click');                                           
 </head>                                                            <header>
     <nav>
         <div class="nav-wrapper <?php echo $color1?>">
-        <a href="<?php echo base_url()?>" class="brand-logo">Tokyo Track</a>
+        <a href="<?php echo base_url()?>" class="tt_logo_a brand-logo">Tokyo Track</a>
         <ul id="nav-mobile" class="right side-nav">
 	<?php for($i=0;$i<count($titles);$i++){?>
             <li><a href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>"><?php echo $titles[$i]->name;?></a></li>

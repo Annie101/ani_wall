@@ -11,13 +11,10 @@ class Anime extends CI_Controller {
 	}
 
 	public function index($title = null,$contents=null,$currentNumber = null){
-		$data['color1']= "light-blue darken-2";
-		$data['color2']= "light-blue lighten-2";
-		$data['color3']= "light-blue";
+		$data['color1']= "orange lighten-1";
+		$data['color2']= "white";
+		$data['color3']= "orange";
 
-		$data['color1']= "orange";
-		$data['color2']= "orange lighten-5";
-		$data['color3']= "orange darken-2";
 		$titleId = $this->Title_Model->getIdFromName(str_replace("%20", " ", $title));
 		$titleName = $this->Title_Model->getNameFromId($titleId);
 		//if($_POST)$this->search($_POST);
