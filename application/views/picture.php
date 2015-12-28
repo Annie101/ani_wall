@@ -9,7 +9,7 @@
 </div>
 
 <center>
-<img width="100%" src="<?php echo $imageUrls[$currentNumber]->url?>">
+<img width="80%" src="<?php echo $imageUrls[$currentNumber]->url?>">
 <br>
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
