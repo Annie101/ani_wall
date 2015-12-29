@@ -4,7 +4,7 @@
  ＞ 
 <a class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>"><?php echo $titleName;?></a>
  ＞ 
-<a class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>/illustration">Illustration</a>
+<a class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>/illustration/0">Illustration</a>
 </span>
 </div>
 
@@ -23,8 +23,9 @@
 </script>
 <?php } ?>
 <div class="col s12">
-  <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Previous</a>
-  <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Next</a>
+  <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">＜Previous</a>
+  <a href="<?php echo base_url()?>" class="<?php echo $color3?> waves-effect waves-light btn s6">See Other Anime</a>
+  <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Next＞</a>
 </div>
 <br>
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>

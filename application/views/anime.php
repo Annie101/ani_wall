@@ -33,7 +33,7 @@
 <br>
 <br>
 <div class="center-align">
-<a href="<?php echo base_url()."anime/".$titleName."/illustration"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Pictures</a>
+<a href="<?php echo base_url()."anime/".$titleName."/illustration/0"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Pictures</a>
 </div>
 <br>
 <?php } ?>
