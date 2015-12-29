@@ -24,8 +24,10 @@
 <?php } ?>
 <div class="col s12">
   <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">＜Previous</a>
-  <a href="<?php echo base_url()?>" class="<?php echo $color3?> waves-effect waves-light btn s6">See Other Anime</a>
   <a href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Next＞</a>
+</div>
+<div style="margin-top:5px" class="col s12">
+  <a href="<?php echo base_url()?>" class="<?php echo $color3?> waves-effect waves-light btn s6">See Other Anime</a>
 </div>
 <br>
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>
