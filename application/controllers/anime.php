@@ -6,6 +6,7 @@ class Anime extends CI_Controller {
 		$this->load->model('Title_Model');
 		$this->load->model('Picture_Model');
 		$this->load->model('Movie_Model');
+		$this->load->model('View_Log_Model');
 		$this->load->model('Request_Model');
 		$this->load->helper('url');
 	}
@@ -17,8 +18,6 @@ class Anime extends CI_Controller {
 
 		$titleId = $this->Title_Model->getIdFromName(str_replace("%20", " ", $title));
 		$titleName = $this->Title_Model->getNameFromId($titleId);
-		//if($_POST)$this->search($_POST);
-
 		$data['titles'] = $this->Title_Model->getAllTitles();
 		$data['titleName'] = $titleName;
 		$data['description'] = $this->Title_Model->getDescriptionFromId($titleId);
@@ -27,14 +26,18 @@ class Anime extends CI_Controller {
 		$data['tag'] = str_replace(" ","",strtolower($titleName));
 		$data['animeTitle'] = $titleName;
 		$data['headerTitle'] = "Tokyo Track｜".$titleName;
+		if(empty($currentNumber))$contentId = 0;
+		else $contentId = $currentNumber;
 		//アニメページ
 		if(empty($contents)){
 			$this->loadView("anime",$data);
 		//アニメ > 動画ページ
 		}else if($contents == "movie"){
+			$this->insertLog($titleId,1,$contentId);
 			$this->loadView("movie",$data);
 		//アニメ > 画像ページ
 		}else if($contents == "illustration"){
+			$this->insertLog($titleId,2,$contentId);
 			if($currentNumber === null){
 				$this->loadView("illustration",$data);
 			}else{
@@ -50,7 +53,14 @@ class Anime extends CI_Controller {
 			}
 		//アニメ > instagramページ
 		}else if($contents == "instagram"){
+			$this->insertLog($titleId,3,$content_id);
 			$this->loadView("instagram",$data);
+		}
+	}
+
+	public function insertLog($titleId,$contentTypeId,$contentId){
+		if(base_url()=="http://tokyotrack.co/"){	
+			$this->View_Log_Model->insertViewLog($titleId,$contentTypeId,$contentId);
 		}
 	}
 
