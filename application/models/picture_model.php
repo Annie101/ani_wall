@@ -45,8 +45,8 @@ class Picture_Model extends CI_Model {
 
 	public function getContentsNumFromTitleId($artistId){
                 $sql = "SELECT count(*) FROM picture ";
-                $sql .= "WHERE title_id = {$artistId}";
-                $sql .= " AND delete_flag = 0";
+                $sql .= "WHERE title_id = {$artistId} ";
+                $sql .= "delete_flag = 0";
                 $query = $this->db->query($sql);
                 $result = $query->result_array();
                 return $result[0]['count(*)'];

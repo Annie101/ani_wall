@@ -10,7 +10,7 @@ class Title_Model extends CI_Model {
         public function getIdFromName($name){
                 $sql = "SELECT id FROM title ";
                 $sql .= "WHERE name = '{$name}' ";
-                $sql .= "AND delete_flag = 0 ";
+                $sql .= "AND publish_flag = 1 and delete_flag = 0 ";
                 $query = $this->db->query($sql);
                 $result = $query->result_array();
                 return $result[0]['id'];
@@ -34,17 +34,8 @@ class Title_Model extends CI_Model {
 
         public function getAllTitles(){
                 $sql = "SELECT id,name FROM title ";
-                $sql .= "WHERE delete_flag = 0 ";
+                $sql .= "WHERE publish_flag = 1 and delete_flag = 0 ";
                 $sql .= "ORDER BY name ASC";
-                $query = $this->db->query($sql);
-                $result = $query->result();
-                return $result;
-        }
-
-        public function getOtherTitles($titleId){
-                $sql = "SELECT name,icon,package_name FROM title ";
-                $sql .= "WHERE delete_flag = 0 ";
-                $sql .= "And id != {$titleId} ";
                 $query = $this->db->query($sql);
                 $result = $query->result();
                 return $result;
