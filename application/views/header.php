@@ -20,11 +20,7 @@
   ga('create', 'UA-54114189-8', 'auto');
   ga('send', 'pageview');
 </script>
-<script type="text/javascript">                                                                                                                                
-$('a').on('click', function() {                                                                                                                                
-        ga('send', 'event', 'menu', 'click');                                                                                                                  
-});                                                                                                                                                            
-
+<script type="text/javascript">
 (function($){
  $(function(){
 	 $('.button-collapse').sideNav();
@@ -34,13 +30,19 @@ $('a').on('click', function() {
 	 }); 
  })(jQuery);
 </script>                                                                                                                                                      
+<script type="text/javascript">
+    jQuery(function() {  
+    jQuery("a").click(function(e) {        
+        var name = jQuery(this).attr('name');
+        ga('send', 'event', 'TokyoTrack', 'click', name);
+	});
+    });
+</script>                                                                                                                                                      
 <?php }else{ ?>
 <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>../public/materialize/css/materialize.min.css"  media="screen,projection"/>
 <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>../public/style.css"  media="screen,projection"/>
 <script src="<?php echo base_url();?>../public/materialize/js/materialize.js"></script>
-<script type="text/javascript">                                                                                                                                
-$('a').on('click', function() {
-ga('send', 'event', 'menu', 'click');                                                                 });                                                                                                                                                            
+<script type="text/javascript">
 (function($){
  $(function(){
 	 $('.button-collapse').sideNav();
@@ -51,17 +53,17 @@ ga('send', 'event', 'menu', 'click');                                           
  })(jQuery);
 </script>                                                                                                                                                      
 <?php } ?>
-</head>                                                            <header>
+</head> 
+<header>
     <nav>
         <div class="nav-wrapper <?php echo $color1?>">
-        <a href="<?php echo base_url()?>" class="tt_logo_a brand-logo">Tokyo Track</a>
+        <a href="<?php echo base_url()?>" name="top_logo" class="tt_logo_a brand-logo">Tokyo Track</a>
         <ul id="nav-mobile" class="right side-nav">
 	<?php for($i=0;$i<count($titles);$i++){?>
-            <li><a href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>"><?php echo $titles[$i]->name;?></a></li>
+            <li><a name="side_menu<?php echo $titles[$i]->name;?>" href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>"><?php echo $titles[$i]->name;?></a></li>
 	<?php } ?>
-	<li><a href="https://docs.google.com/forms/d/16mXlg1xnj5w_o099qRRlZpfkC9cVLBYItRaDIT4nke4/viewform?uiv=1&edit_requested=true"><span class="tt_request">REQUEST</span></a></li>
+	<li><a name="side_menu_REQUEST" href="https://docs.google.com/forms/d/16mXlg1xnj5w_o099qRRlZpfkC9cVLBYItRaDIT4nke4/viewform?uiv=1&edit_requested=true"><span class="tt_request">REQUEST</span></a></li>
         </ul>
-        <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
         </div>
     </nav>
 </header>
