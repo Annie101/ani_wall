@@ -30,7 +30,7 @@ class Anime extends CI_Controller {
 		else $contentId = $currentNumber;
 		//アニメページ
 		if(empty($contents)){
-			$data['pageType'] = $contents;
+			$data['pageType'] = "anime";
 			$this->loadView("anime",$data);
 		//アニメ > 動画ページ
 		}else if($contents == "movie"){
