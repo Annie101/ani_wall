@@ -1,10 +1,10 @@
 <div class="tt_bread_div col s12 <?php echo $color2?>">
 <span class="tt_bread">
-<a name="picture_bread_top" class="tt_bread" href="<?php echo base_url();?>">TOP</a>
+<a name="<?php echo $pageType;?>_bread_top" class="tt_bread" href="<?php echo base_url();?>">TOP</a>
  ＞ 
-<a name="picture_bread_anime" class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>"><?php echo $titleName;?></a>
+<a name="<?php echo $pageType;?>_bread_anime" class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>"><?php echo $titleName;?></a>
  ＞ 
-<a name="picture_bread_illustration" class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>/illustration/0">Illustration</a>
+<a name="<?php echo $pageType;?>_bread_picture" class="tt_bread" href="<?php echo base_url();?>anime/<?php echo $titleName;?>/picture/0">Picture</a>
 </span>
 </div>
 
@@ -23,8 +23,8 @@
 </script>
 <?php } ?>
 <div class="col s12">
-  <a name="picture_previous" href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">＜Previous</a>
-  <a name="picture_next" href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Next＞</a>
+  <a name="<?php echo $pageType;?>_previous" href="<?php echo base_url()."anime/".$titleName."/picture/".$previousNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">＜Previous</a>
+  <a name="<?php echo $pageType;?>_next" href="<?php echo base_url()."anime/".$titleName."/picture/".$nextNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Next＞</a>
 </div>
 <br>
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>
@@ -42,9 +42,9 @@
 <div class="collection">
   <p class="tt_color1 collection-item">ANIME LIST</p>
 	<?php for($i=0;$i<count($titles);$i++){?>
-        <a name="picture_seeother_anime_<?php echo $titles[$i]->name;?>" href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>" class="collection-item"><?php echo $titles[$i]->name;?></a>
+        <a name="<?php echo $pageType;?>_seeother_anime_<?php echo $titles[$i]->name;?>" href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>" class="collection-item"><?php echo $titles[$i]->name;?></a>
 	<?php } ?>
-  <a name="picture_seeother_anime" href="<?php echo base_url()?>" class="collection-item">See Other Anime</a>
+  <a name="<?php echo $pageType;?>_seeother_anime" href="<?php echo base_url()?>" class="collection-item">See Other Anime</a>
       </div>
 </center>
 </div>

@@ -14,6 +14,7 @@ class Top extends CI_Controller {
 		$data['color1']= "orange lighten-1";
 		$data['color2']= "white";
 		$data['color3']= "orange";
+		$data['pageType'] = "top";
 
 		if($_POST){
 			$this->search($_POST);

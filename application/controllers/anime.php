@@ -30,16 +30,19 @@ class Anime extends CI_Controller {
 		else $contentId = $currentNumber;
 		//アニメページ
 		if(empty($contents)){
+			$data['pageType'] = $contents;
 			$this->loadView("anime",$data);
 		//アニメ > 動画ページ
 		}else if($contents == "movie"){
+			$data['pageType'] = $contents;
 			$this->insertLog($titleId,1,$contentId);
 			$this->loadView("movie",$data);
 		//アニメ > 画像ページ
-		}else if($contents == "illustration"){
+		}else if($contents == "picture"){
+			$data['pageType'] = $contents;
 			$this->insertLog($titleId,2,$contentId);
 			if($currentNumber === null){
-				$this->loadView("illustration",$data);
+				$this->loadView("picture",$data);
 			}else{
 				$data['currentNumber'] = $currentNumber;
 				$data['previousNumber'] = $currentNumber -1;
@@ -53,6 +56,7 @@ class Anime extends CI_Controller {
 			}
 		//アニメ > instagramページ
 		}else if($contents == "instagram"){
+			$data['pageType'] = $contents;
 			$this->insertLog($titleId,3,$content_id);
 			$this->loadView("instagram",$data);
 		}

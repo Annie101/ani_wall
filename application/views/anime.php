@@ -1,11 +1,11 @@
       <div class="tt_bread_div col s12 <?php echo $color2;?>">
-	<span class="tt_bread"><a name="anime_bread_top" class="tt_bread" href="<?php echo base_url();?>">TOP</a> ＞ <?php echo $titleName;?></span>
+	<span class="tt_bread"><a name="<?php echo $pageType;?>_bread_top" class="tt_bread" href="<?php echo base_url();?>">TOP</a> ＞ <?php echo $titleName;?></span>
       </div>
 
     <div class="tt_tab_div col s12">
       <ul class="tabs">
-        <li class="tab col s4"><a name="anime_bread_detail" class="tt_tab_a" href="#detail">Detail</a></li>
-        <li class="tab col s4"><a name="anime_bread_Illustrations" class="tt_tab_a" href="#pictures">Illustrations</a></li>
+        <li class="tab col s4"><a name="<?php echo $pageType;?>_tab_detail" class="tt_tab_a" href="#detail">Detail</a></li>
+        <li class="tab col s4"><a name="<?php echo $pageType;?>_tab_Pictures" class="tt_tab_a" href="#pictures">Pictures</a></li>
 <!--
         <li class="tab col s4"><a href="#sns">SNS</a></li>
 -->
@@ -18,7 +18,7 @@
 </div>
 <br>
 <div class="center-align">
-<a name="seemore_movie" href="<?php echo base_url()."anime/".$titleName."/movie"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Movies</a>
+<a name="<?php echo $pageType;?>_seemore_movie" href="<?php echo base_url()."anime/".$titleName."/movie"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Movies</a>
 </div>
 <?php } ?>
 <br>
@@ -33,7 +33,7 @@
 <br>
 <br>
 <div class="center-align">
-<a name="seemore_picture" href="<?php echo base_url()."anime/".$titleName."/illustration/0"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Pictures</a>
+<a name="<?php echo $pageType;?>_seemore_picture" href="<?php echo base_url()."anime/".$titleName."/picture/0"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Pictures</a>
 </div>
 <br>
 <?php } ?>

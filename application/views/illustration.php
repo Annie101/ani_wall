@@ -10,7 +10,7 @@
 <div class="row">
 <?php for($i=0;$i<count($imageUrls);$i++){?>
 <div class="small-6 large-4 columns">
-<a href="<?php echo base_url();?>anime/<?php echo $titleName;?>/illustration/<?php echo $i;?>">
+<a href="<?php echo base_url();?>anime/<?php echo $titleName;?>/picture/<?php echo $i;?>">
 <img width="100%" src="<?php echo $imageUrls[$i]->url?>">
 </a>
 </div>

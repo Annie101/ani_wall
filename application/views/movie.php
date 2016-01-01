@@ -1,8 +1,8 @@
 <div class="tt_bread_div col s12 <?echo $color2;?>">
 <span class="tt_bread">
-<a class="tt_bread" name="movie_bread_top" href="<?php echo base_url();?>">TOP</a>
+<a class="tt_bread" name="<?php echo $pageType;?>_bread_top" href="<?php echo base_url();?>">TOP</a>
  ＞ 
-<a class="tt_bread" name="movie_bread_anime" href="<?php echo base_url();?>anime/<?php echo $titleName;?>"><?php echo $titleName;?></a>
+<a class="tt_bread" name="<?php echo $pageType;?>_bread_anime" href="<?php echo base_url();?>anime/<?php echo $titleName;?>"><?php echo $titleName;?></a>
  ＞ Movies
 </span>
 </div>
