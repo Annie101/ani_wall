@@ -37,6 +37,7 @@
         ga('send', 'event', '<?php echo $pageType;?>', 'click', name);
 	});
     });
+    ga('send', 'event', '<?php echo $pageType;?>', 'open', 'open_<?php echo $pageType;?>');
 </script>                                                                                                                                                      
 <?php }else{ ?>
 <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>../public/materialize/css/materialize.min.css"  media="screen,projection"/>
