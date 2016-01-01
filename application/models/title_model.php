@@ -40,4 +40,13 @@ class Title_Model extends CI_Model {
                 $result = $query->result();
                 return $result;
         }
+
+        public function getAllTitlesOrderByCreatedAt(){
+                $sql = "SELECT id,name FROM title ";
+                $sql .= "WHERE publish_flag = 1 and delete_flag = 0 ";
+                $sql .= "ORDER BY created_at DESC";
+                $query = $this->db->query($sql);
+                $result = $query->result();
+                return $result;
+        }
 }

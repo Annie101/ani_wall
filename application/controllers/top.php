@@ -15,11 +15,13 @@ class Top extends CI_Controller {
 		$data['color2']= "white";
 		$data['color3']= "orange";
 
-		if($_POST)$this->search($_POST);
+		if($_POST){
+			$this->search($_POST);
+		}
 		$data['titles'] = $this->Title_Model->getAllTitles();
-
-		for($i=0;$i<count($data['titles']);$i++){
-			$data['url'][$i] = $this->Picture_Model->getAllUrlsFromTitleId($data['titles'][$i]->id);
+		$data['newTitles'] = $this->Title_Model->getAllTitlesOrderByCreatedAt();
+		for($i=0;$i<count($data['newTitles']);$i++){
+			$data['url'][$i] = $this->Picture_Model->getAllUrlsFromTitleId($data['newTitles'][$i]->id);
 		}
 		$data['headerTitle'] = "Tokyo Track";
 		$this->load->view('header',$data);

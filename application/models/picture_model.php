@@ -26,9 +26,10 @@ class Picture_Model extends CI_Model {
         }
 
         public function getAllUrlsFromTitleId($artistId){
-                $sql = "SELECT url FROM picture ";
+                $sql = "SELECT url,created_at FROM picture ";
                 $sql .= "WHERE title_id = {$artistId} ";
-                $sql .= "AND delete_flag = 0";
+                $sql .= "AND delete_flag = 0 ";
+                //$sql .= "ORDER BY created_at DESC";
                 $query = $this->db->query($sql);
                 $result = $query->result();
                 return $result;
