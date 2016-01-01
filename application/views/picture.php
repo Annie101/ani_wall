@@ -26,9 +26,6 @@
   <a name="picture_previous" href="<?php echo base_url()."anime/".$titleName."/illustration/".$previousNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">＜Previous</a>
   <a name="picture_next" href="<?php echo base_url()."anime/".$titleName."/illustration/".$nextNumber;?>" class="<?php echo $color3?> waves-effect waves-light btn s6">Next＞</a>
 </div>
-<div style="margin-top:5px" class="col s12">
-  <a name="picture_seeother_anime" href="<?php echo base_url()?>" class="<?php echo $color3?> waves-effect waves-light btn s6">See Other Anime</a>
-</div>
 <br>
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -42,6 +39,13 @@
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <?php } ?>
+<div class="collection">
+  <p class="tt_color1 collection-item">ANIME LIST</p>
+	<?php for($i=0;$i<count($titles);$i++){?>
+        <a name="picture_seeother_anime_<?php echo $titles[$i]->name;?>" href="<?php echo base_url();?>anime/<?php echo $titles[$i]->name;?>" class="collection-item"><?php echo $titles[$i]->name;?></a>
+	<?php } ?>
+  <a name="picture_seeother_anime" href="<?php echo base_url()?>" class="collection-item">See Other Anime</a>
+      </div>
 </center>
 </div>
 

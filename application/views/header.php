@@ -54,7 +54,6 @@
 </script>                                                                                                                                                      
 <?php } ?>
 </head> 
-<header>
     <nav>
         <div class="nav-wrapper <?php echo $color1?>">
         <a href="<?php echo base_url()?>" name="top_logo" class="tt_logo_a brand-logo">Tokyo Track</a>
@@ -66,4 +65,3 @@
         </ul>
         </div>
     </nav>
-</header>

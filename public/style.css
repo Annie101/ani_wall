@@ -38,3 +38,8 @@ nav .brand-logo{
 .collection a.collection-item {
 	color:#424242;
 }
+
+.collection .collection-item.tt_color1 {
+	color:#FFFFFF;
+	background-color:#ffa726;
+}
