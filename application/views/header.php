@@ -34,7 +34,7 @@
     jQuery(function() {  
     jQuery("a").click(function(e) {        
         var name = jQuery(this).attr('name');
-        ga('send', 'event', '<?php echo $pageType;?>, 'click', name);
+        ga('send', 'event', '<?php echo $pageType;?>', 'click', name);
 	});
     });
 </script>                                                                                                                                                      
