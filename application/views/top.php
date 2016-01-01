@@ -1,7 +1,7 @@
 <div class="col s12">
 <ul class="tabs">
-<li class="tab col s3"><a href="#new">New</a></li>
-<li class="tab col s3"><a class="active" href="#animeList">ANIME LIST</a></li>
+<li class="tab col s3"><a class="active" href="#new">New</a></li>
+<li class="tab col s3"><a href="#animeList">ANIME LIST</a></li>
 </ul>
 </div>
 <div id="new" class="col s12">
