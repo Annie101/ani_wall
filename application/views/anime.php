@@ -2,16 +2,10 @@
 	<span class="tt_bread"><a name="<?php echo $pageType;?>_bread_top" class="tt_bread" href="<?php echo base_url();?>">TOP</a> ＞ <?php echo $titleName;?></span>
       </div>
 
-    <div class="tt_tab_div col s12">
-      <ul class="tabs">
-        <li class="tab col s4"><a name="<?php echo $pageType;?>_tab_detail" class="tt_tab_a" href="#detail">Detail</a></li>
-        <li class="tab col s4"><a name="<?php echo $pageType;?>_tab_Pictures" class="tt_tab_a" href="#pictures">Pictures</a></li>
-<!--
-        <li class="tab col s4"><a href="#sns">SNS</a></li>
--->
-      </ul>
-    </div>
-    <div id="detail" class="col s12">
+<ul class="collection">
+<li class="tt_contents_list collection-item">
+<h5>Movie</h5>
+<!-- Movie -->
 <?php if(!empty($movies)){ ?>
 <div class="video-container">
 <iframe width="853" height="480" src="https://www.youtube.com/embed/<?php echo $movies?>" frameborder="0" allowfullscreen></iframe>
@@ -20,24 +14,40 @@
 <div class="center-align">
 <a name="<?php echo $pageType;?>_seemore_movie" href="<?php echo base_url()."anime/".$titleName."/movie"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Movies</a>
 </div>
+<br>
 <?php } ?>
-<br>
-<p><?php echo $description?></p>
+<!-- Movie -->
+</li>
 
-</div>
-<div id="pictures" class="col s12">
+<li class="tt_contents_list collection-item">
+<!-- Picture -->
+<h5>Pictures</h5>
 <?php if(!empty($imageUrls)){ ?>
-<?php for($i=0;$i<5;$i++){?>
-<img width="100%" class="responsive-img" src="<?php echo $imageUrls[$i]->url?>">
-<?php }?>
-<br>
+<div class="carousel">
+    <img class="trimming carousel-item"src="<?php echo $imageUrls[0]->url?>">
+    <img class="trimming carousel-item"src="<?php echo $imageUrls[1]->url?>">
+    <img class="trimming carousel-item"src="<?php echo $imageUrls[2]->url?>">
+    <img class="trimming carousel-item"src="<?php echo $imageUrls[3]->url?>">
+    <img class="trimming carousel-item"src="<?php echo $imageUrls[4]->url?>">
+</div>
 <br>
 <div class="center-align">
 <a name="<?php echo $pageType;?>_seemore_picture" href="<?php echo base_url()."anime/".$titleName."/picture/0"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Pictures</a>
 </div>
 <br>
 <?php } ?>
-</div>
+<!-- Picture -->
+</li>
+
+<li class="tt_contents_list collection-item">
+<h5>Details</h5>
+<!-- Description -->
+<p><?php echo $description?></p>
+<!-- Description -->
+</li>
+</ul>
+
+
 <!--
     <div id="sns" class="col s12">
 <iframe src="http://widget.websta.me/in/tag:<?php echo $tag;?>/?r=1&w=2&h=5&b=1&p=5&sb=off" 

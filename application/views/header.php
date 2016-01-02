@@ -29,6 +29,11 @@
 	 $('.slider').slider({full_width: true});
 	 }); 
  })(jQuery);
+
+$(document).ready(function(){
+      $('.carousel').carousel();
+    });
+        
 </script>                                                                                                                                                      
 <script type="text/javascript">
     jQuery(function() {  
@@ -52,6 +57,11 @@
 	 $('.slider').slider({full_width: true});
 	 }); 
  })(jQuery);
+
+$(document).ready(function(){
+      $('.carousel').carousel();
+    });
+        
 </script>                                                                                                                                                      
 <?php } ?>
 </head> 

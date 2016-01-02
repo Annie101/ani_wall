@@ -43,3 +43,17 @@ nav .brand-logo{
 	color:#FFFFFF;
 	background-color:#ffa726;
 }
+
+.carousel .carousel-item {
+	width: 150px;
+	height: 150px;
+ }
+
+.carousel {
+	height: 150px;
+}
+
+.collection .collection-item.tt_contents_list {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
