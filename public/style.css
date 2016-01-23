@@ -44,12 +44,12 @@ nav .brand-logo{
 	background-color:#ffa726;
 }
 
-.carousel .carousel-item {
+.carousels .carousel-item {
 	width: 150px;
 	height: 150px;
  }
 
-.carousel {
+.carousels {
 	height: 150px;
 }
 

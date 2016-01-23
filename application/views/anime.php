@@ -23,13 +23,13 @@
 <!-- Picture -->
 <h5>Pictures</h5>
 <?php if(!empty($imageUrls)){ ?>
-<div class="carousel">
+<center>
+<div class="carousels">
     <img class="trimming carousel-item"src="<?php echo $imageUrls[0]->url?>">
     <img class="trimming carousel-item"src="<?php echo $imageUrls[1]->url?>">
     <img class="trimming carousel-item"src="<?php echo $imageUrls[2]->url?>">
-    <img class="trimming carousel-item"src="<?php echo $imageUrls[3]->url?>">
-    <img class="trimming carousel-item"src="<?php echo $imageUrls[4]->url?>">
 </div>
+</center>
 <br>
 <div class="center-align">
 <a name="<?php echo $pageType;?>_seemore_picture" href="<?php echo base_url()."anime/".$titleName."/picture/0"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Pictures</a>

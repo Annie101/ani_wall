@@ -21,6 +21,7 @@
   ga('send', 'pageview');
 </script>
 <script type="text/javascript">
+
 (function($){
  $(function(){
 	 $('.button-collapse').sideNav();
@@ -33,7 +34,6 @@
 $(document).ready(function(){
       $('.carousel').carousel();
     });
-        
 </script>                                                                                                                                                      
 <script type="text/javascript">
     jQuery(function() {  
@@ -60,8 +60,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
       $('.carousel').carousel();
-    });
-        
+});
 </script>                                                                                                                                                      
 <?php } ?>
 </head> 
