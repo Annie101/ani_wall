@@ -45,12 +45,12 @@ nav .brand-logo{
 }
 
 .carousels .carousel-item {
-	width: 150px;
-	height: 150px;
+	width: 80px;
+	height: 80px;
  }
 
 .carousels {
-	height: 150px;
+	height: 80px;
 }
 
 .collection .collection-item.tt_contents_list {
