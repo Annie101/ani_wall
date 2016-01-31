@@ -6,42 +6,59 @@ class News extends CI_Controller {
 		$this->load->model('Title_Model');
 		$this->load->model('Picture_Model');
 		$this->load->model('Movie_Model');
-		$this->load->model('View_Log_Model');
 		$this->load->model('Request_Model');
+		$this->load->model('Media_Model');
+		$this->load->model('Article_Model');
 		$this->load->helper('url');
 	}
 
-	public function index($title = null,$contents=null,$currentNumber = null){
+	public function index($page = 0){
+		date_default_timezone_set('Asia/Tokyo');
+		$this->newestDate = $this->Article_Model->getNewestDate();
+		$oldestDate = 1453613579;
+
+		$limit = $page * 20;
+		$data = $this->getArticle($limit);
+		if(empty($data))return;
+
+		$data['titleName'] = "News";
 		$data['color1']= "orange lighten-1";
 		$data['color2']= "white";
 		$data['color3']= "orange";
+		$data['pageType'] = "top";
 
-		$titleId = $this->Title_Model->getIdFromName(str_replace("%20", " ", $title));
-		$titleName = $this->Title_Model->getNameFromId($titleId);
 		$data['titles'] = $this->Title_Model->getAllTitles();
-		$data['titleName'] = $titleName;
-		$data['description'] = $this->Title_Model->getDescriptionFromId($titleId);
-		$data['movies'] = $this->Movie_Model->getVideoIdFromTitleId($titleId);
-		$data['imageUrls'] = $this->Picture_Model->getUrlsFromTitleId($titleId);
-		$data['tag'] = str_replace(" ","",strtolower($titleName));
-		$data['animeTitle'] = $titleName;
-		$data['headerTitle'] = "Tokyo Track｜".$titleName;
-		if(empty($currentNumber))$contentId = 0;
-		else $contentId = $currentNumber;
-		$data['pageType'] = "anime";
-		$this->loadView("anime",$data);
-	}
+		$data['headerTitle'] = "Tokyo Track";
 
-	public function insertLog($titleId,$contentTypeId,$contentId){
-		if(base_url()=="http://tokyotrack.co/"){	
-			$this->View_Log_Model->insertViewLog($titleId,$contentTypeId,$contentId);
+		if($page == 0){
+			$data['preButton'] = false;
+		}else{
+			$data['preButton'] = $page - 1;
 		}
+	
+		if(count($data['entry']) < 20){
+			$data['nextButton'] = false;
+		}else{
+			$data['nextButton'] = $page +1;
+		}
+
+		$this->load->view('header',$data);
+		$this->load->view('news',$data);
+		$this->load->view('footer');
 	}
 
-	public function loadView($page,$data){
-		$this->load->view('header',$data);
-		$this->load->view($page,$data);
-		//$this->load->view('test',$data);
-		$this->load->view('footer');
+	public function getArticle($limit){
+		$articles = $this->Article_Model->getArticleByLimit($limit);
+		if(count($articles) < 1)return 0;
+		for($i=0;$i<count($articles);$i++) {
+			$data['entry'][$i]['title'] = $articles[$i]->title;
+			$data['entry'][$i]['link'] = $articles[$i]->url;
+			$data['entry'][$i]['date'] = $articles[$i]->date;
+			$data['entry'][$i]['image'] = $articles[$i]->image;
+			$media = $this->Media_Model->getMedia($articles[$i]->media_id);
+			$data['entry'][$i]['media'] = $media->title;
+			$this->newestDate = $articles[$i]->date;
+		}
+		return $data;
 	}
 }
