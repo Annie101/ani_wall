@@ -7,7 +7,7 @@
 <?php 
 for($i=0;$i<count($entry);$i++){ ?>
 <li class="collection-item avatar">
-<a href="<?php echo $entry[$i]['link']; ?>">
+<a  name="<?php echo $pageType;?>_news_article" href="<?php echo $entry[$i]['link']; ?>">
 <img src="<?php echo $entry[$i]['image'] ?>" alt="" class="circle">
 
 <?php 
@@ -23,8 +23,8 @@ if(strlen($entry[$i]['title']) > 140){ ?>
 </ul>
 
 <?php if($preButton !== false){ ?>
-<a href="<?php echo base_url()."news/index/".$preButton; ?>" class="preButton waves-effect waves-light btn">PREVIOUS</a>
+<a name="<?php echo $pageType;?>_news_previous" href="<?php echo base_url()."news/index/".$preButton; ?>" class="preButton waves-effect waves-light btn">PREVIOUS</a>
 <?php }?>
 <?php if($nextButton !== false){ ?>
-<a href="<?php echo base_url()."news/index/".$nextButton; ?>" class="nextButton waves-effect waves-light btn">NEXT</a>
+<a name="<?php echo $pageType;?>_news_next" href="<?php echo base_url()."news/index/".$nextButton; ?>" class="nextButton waves-effect waves-light btn">NEXT</a>
 <?php } ?>

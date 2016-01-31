@@ -12,7 +12,7 @@
 </div>
 <br>
 <div class="center-align">
-<a name="<?php echo $pageType;?>_seemore_movie" href="<?php echo base_url()."anime/".$titleName."/movie"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Movies</a>
+<a name="<?php echo $pageType;?>_seemore_movie" href="<?php echo base_url()."anime/".$titleName."/movie"?>" class="<?php echo $color3?> ttButton waves-effect waves-light btn">See More Movies</a>
 </div>
 <br>
 <?php } ?>
@@ -32,7 +32,7 @@
 </center>
 <br>
 <div class="center-align">
-<a name="<?php echo $pageType;?>_seemore_picture" href="<?php echo base_url()."anime/".$titleName."/picture/0"?>" class="<?php echo $color3?> waves-effect waves-light btn">See More Pictures</a>
+<a name="<?php echo $pageType;?>_seemore_picture" href="<?php echo base_url()."anime/".$titleName."/picture/0"?>" class="<?php echo $color3?> ttButton waves-effect waves-light btn">See More Pictures</a>
 </div>
 <br>
 <?php } ?>

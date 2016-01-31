@@ -103,6 +103,10 @@ nav .brand-logo{
 	bottom: 0px;
 }
 
+.ttButton, .ttButton:hover, .ttButton:visited, .ttButton:link, .ttButton:active {
+	color:#ffffff;
+}
+
 .seeMoreNewsButton, .seeMoreNewsButton:hover, .seeMoreNewsButton:visited, .seeMoreNewsButton:link, .seeMoreNewsButton:active {
 	color:#ffffff;
 	background-color:#ffa726;

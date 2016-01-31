@@ -1,7 +1,7 @@
 <div class="col s12">
 <ul class="tabs">
-<li class="tab col s3"><a name="<?php echo $pageType;?>_tab_new" class="active" href="#news">NEWS</a></li>
-<li class="tab col s3"><a name="<?php echo $pageType;?>_tab_new" href="#updated">UPDATED</a></li>
+<li class="tab col s3"><a name="<?php echo $pageType;?>_tab_news" class="active" href="#news">NEWS</a></li>
+<li class="tab col s3"><a name="<?php echo $pageType;?>_tab_updated" href="#updated">UPDATED</a></li>
 <li class="tab col s3"><a name="<?php echo $pageType;?>_tab_anime_list" href="#animeList">ANIME LIST</a></li>
 </ul>
 </div>
@@ -11,7 +11,7 @@
 <?php 
 for($i=0;$i<count($entry);$i++){ ?>
 <li class="collection-item avatar">
-<a href="<?php echo $entry[$i]['link']; ?>">
+<a name="<?php echo $pageType;?>_news_article" href="<?php echo $entry[$i]['link']; ?>">
 <img src="<?php echo $entry[$i]['image'] ?>" alt="" class="circle">
 
 <?php 
@@ -26,7 +26,7 @@ if(strlen($entry[$i]['title']) > 140){ ?>
 <?php } ?>
 </ul>
 
-<a href="<?php echo base_url()."news"; ?>" class="seeMoreNewsButton waves-effect waves-light btn">See More News</a>
+<a name="<?php echo $pageType;?>_news_seemore" href="<?php echo base_url()."news"; ?>" class="seeMoreNewsButton waves-effect waves-light btn">See More News</a>
 </div>
 
 <div id="updated" class="col s12">
