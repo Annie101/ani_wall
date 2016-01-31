@@ -23,10 +23,16 @@
 </script>
 <?php } ?>
 <div class="col s12">
-  <a name="<?php echo $pageType;?>_previous" href="<?php echo base_url()."anime/".$titleName."/picture/".$previousNumber;?>" class="<?php echo $color3?> ttButton waves-effect waves-light btn s6">＜Previous</a>
-  <a name="<?php echo $pageType;?>_next" href="<?php echo base_url()."anime/".$titleName."/picture/".$nextNumber;?>" class="<?php echo $color3?> ttButton waves-effect waves-light btn s6">Next＞</a>
+  <a name="<?php echo $pageType;?>_previous" href="<?php echo base_url()."anime/".$titleName."/picture/".$previousNumber;?>" class="<?php echo $color3?> preButton waves-effect waves-light btn s6">BACK</a>
+  <a name="<?php echo $pageType;?>_next" href="<?php echo base_url()."anime/".$titleName."/picture/".$nextNumber;?>" class="<?php echo $color3?> nextButton waves-effect waves-light btn s6">NEXT </a>
 </div>
 <br>
+
+<a name="<?php echo $pageType;?>_tweet_<?php echo $hashtag?>" data-hashtags="<?php echo $hashtag; ?> #tokyotrack" data-size="large" class="twitter-share-button" href="https://twitter.com/share" data-dnt="true">tweet</a>
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+
 <?php if(base_url()=="http://tokyotrack.co/"){ ?>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- TokyoTrack_footer -->

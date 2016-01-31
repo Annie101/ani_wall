@@ -52,6 +52,7 @@ class Anime extends CI_Controller {
 				}else if($currentNumber >= count($data['imageUrls'])-1){
 					$data['nextNumber'] = 0;
 				}
+				$data['hashtag'] = preg_replace('/(\s|　)/','',$titleName);
 				$this->loadView("picture",$data);
 			}
 		//アニメ > instagramページ
