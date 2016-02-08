@@ -47,6 +47,7 @@ class Anime extends CI_Controller {
 				$data['currentNumber'] = $currentNumber;
 				$data['previousNumber'] = $currentNumber -1;
 				$data['nextNumber'] = $currentNumber +1;
+				$data['imageCount'] = count($data['imageUrls']);
 				if($currentNumber == 0){	
 					$data['previousNumber'] = count($data['imageUrls']) -1;
 				}else if($currentNumber >= count($data['imageUrls'])-1){

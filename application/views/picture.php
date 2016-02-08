@@ -24,6 +24,7 @@
 <?php } ?>
 <div class="col s12">
   <a name="<?php echo $pageType;?>_previous" href="<?php echo base_url()."anime/".$titleName."/picture/".$previousNumber;?>" class="<?php echo $color3?> preButton waves-effect waves-light btn s6">BACK</a>
+<?php echo ($currentNumber+1)."/"."$imageCount"; ?>
   <a name="<?php echo $pageType;?>_next" href="<?php echo base_url()."anime/".$titleName."/picture/".$nextNumber;?>" class="<?php echo $color3?> nextButton waves-effect waves-light btn s6">NEXT </a>
 </div>
 <br>
